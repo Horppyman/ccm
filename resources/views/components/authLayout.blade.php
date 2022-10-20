@@ -12,16 +12,19 @@
     <title>Responsive Sidebar Using TailwindCSS</title>
   </head>
   <body class="flex h-screen font-mono">
-        <a href="/"
+
+        @auth
+        <a href="/dashboard"
             class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
             >
             <i class="bi bi-house-door-fill px-2 bg-gray-900 rounded-md"></i>
         </a>
+        @endauth
 
 
 
         @yield("contents")
 
-    
+
 </body>
 </html>

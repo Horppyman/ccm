@@ -5,7 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\SermonController;
+
 
 
 
@@ -23,6 +27,8 @@ use App\Http\Controllers\ProjectController;
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/sermons', [PageController::class, 'sermons'])->name('sermons');
 
+
+
 Route::get('/register', [AuthController::class, 'registerpage']);
 
 Route::get('/login', [AuthController::class, 'loginpage']);
@@ -35,8 +41,80 @@ Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 
 
 
+
+
 Route::middleware(['isLoggedin'])->group (function() {
 
-    Route::get('/home', [ProjectController::class, 'index'])->name('home');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+
+
+    /*
+    ----------------------------------------------------------------
+    | Category Routes
+    ----------------------------------------------------------------
+    */
+    Route::get('/category', [CategoryController::class, 'index'])
+    ->name('category');
+
+    Route::get('/category/add', [CategoryController::class, 'create'])
+    ->name('addcategory');
+
+    Route::post('category/store', [CategoryController::class, 'store'])
+    ->name('storecategory');
+
+    Route::post('category/delete/{$id}', [CategoryController::class, 'destroy'])
+    ->name('deletecategory');
+
+
+//     Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])
+//     ->name('editcategory');
+
+//     Route::post('/category/store', [CategoryController::class, 'update'])
+//     ->name('storecategory');
+
+
+//     /*
+//     ----------------------------------------------------------------
+//     | Book Routes
+//     ----------------------------------------------------------------
+//     */
+//     Route::get('/book', [BookController::class, 'index'])
+//     ->name('book');
+
+//     Route::get('/book/add', [BookController::class, 'create'])
+//     ->name('addbook');
+
+//     Route::post('/book/store', [BookController::class, 'store'])
+//     ->name('storebook');
+
+//     Route::get('/book/edit/{id}', [BookController::class, 'edit'])
+//     ->name('editbook');
+
+//     Route::post('/book/store', [BookController::class, 'update'])
+//     ->name('updatebook');
+
+
+//     /*
+//     ----------------------------------------------------------------
+//     | Sermon Routes
+//     ----------------------------------------------------------------
+//     */
+//     Route::get('/sermon', [SermonController::class, 'index'])
+//     ->name('category');
+
+//     Route::get('/sermon/add', [SermonController::class, 'create'])
+//     ->name('addsermon');
+
+//     Route::post('/sermon/store', [SermonController::class, 'store'])
+//     ->name('storesermon');
+
+//     Route::get('/sermon/edit/{id}', [SermonController::class, 'edit'])
+//     ->name('editsermon');
+
+//     Route::post('/sermon/store', [SermonController::class, 'update'])
+//     ->name('updatesermon');
+
+
+
 
 });

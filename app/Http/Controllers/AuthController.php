@@ -10,10 +10,28 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function registerpage() {
+
+        if ( session()->has('loginId') ){
+
+            return redirect()->action(
+                [AdminController::class, 'index']
+
+            );
+        }
+
         return(view('auth.register'));
     }
 
     public function loginpage() {
+
+        if ( session()->has('loginId') ){
+
+            return redirect()->action(
+                [AdminController::class, 'index']
+
+            );
+        }
+
         return(view('auth.login'));
     }
 
@@ -25,7 +43,6 @@ class AuthController extends Controller
             'password'=> 'required|min:6|max:12'
         ]);
 
-   
 
         $user = new User();
         $user->name = $request->name;
@@ -45,7 +62,7 @@ class AuthController extends Controller
             $request->session()->put('loginId', $loggedInUser[0]->id);
 
             return redirect()->action(
-                [ProjectController::class, 'index']
+                [AdminController::class, 'index']
 
             );
         } else {
@@ -63,6 +80,9 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
+
+        // dd($request);
+
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -77,7 +97,7 @@ class AuthController extends Controller
             $request->session()->put('loginId', $user->id);
 
             return redirect()->action(
-                [ProjectController::class, 'index']
+                [AdminController::class, 'index']
 
             );
         }
@@ -103,6 +123,6 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }
