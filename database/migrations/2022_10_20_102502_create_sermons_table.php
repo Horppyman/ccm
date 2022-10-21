@@ -19,7 +19,7 @@ class CreateSermonsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('preacher');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->timestamps();
 
 

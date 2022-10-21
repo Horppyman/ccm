@@ -89,11 +89,11 @@ Route::middleware(['isLoggedin'])->group (function() {
     Route::post('/book/store', [BookController::class, 'store'])
     ->name('storebook');
 
-//     Route::get('/book/edit/{id}', [BookController::class, 'edit'])
-//     ->name('editbook');
+    Route::get('/book/edit/{id}', [BookController::class, 'edit'])
+    ->name('editbook');
 
-//     Route::post('/book/store', [BookController::class, 'update'])
-//     ->name('updatebook');
+    Route::post('/book/store/{id}', [BookController::class, 'update'])
+    ->name('updatebook');
 
     Route::get('/book/delete/{id}', [BookController::class, 'destroy'])
     ->name('deletebook');
@@ -114,11 +114,11 @@ Route::middleware(['isLoggedin'])->group (function() {
     Route::post('/sermon/store', [SermonController::class, 'store'])
     ->name('storesermon');
 
-//     Route::get('/sermon/edit/{id}', [SermonController::class, 'edit'])
-//     ->name('editsermon');
+    Route::get('/sermon/edit/{id}', [SermonController::class, 'edit'])
+    ->name('editsermon');
 
-//     Route::post('/sermon/store', [SermonController::class, 'update'])
-//     ->name('updatesermon');
+    Route::post('/sermon/store/{id}', [SermonController::class, 'update'])
+    ->name('updatesermon');
 
     Route::get('/sermon/delete/{id}', [SermonController::class, 'destroy'])
     ->name('deletesermon');

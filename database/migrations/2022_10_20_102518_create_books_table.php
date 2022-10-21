@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('author');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->timestamps();
 
 

@@ -16,9 +16,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::with('category')->get();
 
-
+        // dd($books[0]->category);
         return view('admin.books', compact('books'));
     }
 
@@ -78,7 +78,7 @@ class BookController extends Controller
             $file-> move(public_path('Image'), $filename);
 
             $data['book_file']= $filename;
-        }
+        } else { $filename = null; };
 
         $book->file = $filename;
 
@@ -109,9 +109,16 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit(Book $book, $id)
     {
-        //
+        $categories = Category::all();
+
+
+        $book = Book::where('id', $id)->with('category')->get();
+
+        // dd($book);
+
+        return view('admin.editbook', Compact('categories','book'));
     }
 
     /**
@@ -121,9 +128,64 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, Book $book, $id)
     {
-        //
+        $book = book::find($id);
+
+        // validateds all input...
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+            'category_id' => 'required',
+            'category_desc' => 'required',
+            'author' => 'required',
+
+        ]);
+
+        // checks id validator fails and returns to form ...
+        if ($validator->fails()) {
+            return redirect('sermon/edit/'.$id)
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        // Retrieve the validated input...
+        $validated = $validator->validated();
+
+
+        if ($request->book_file != ''){
+            $path = public_path().'/Image';
+
+            //code for remove old file
+            if($book->file != ''  && $book->file != null){
+                 $file_old = $path."/".$book->file;
+                 unlink($file_old);
+            }
+
+            $file= $request->file('book_file');
+
+            $filename= date('YmdHi')."_".$book->title.".".$request->book_file->extension();
+
+            $file-> move(public_path('Image'), $filename);
+
+        } else {
+            $filename = $book->file;
+        }
+
+
+
+        $book->title =  $validated['title'];
+        $book->category_id = $validated['category_id'];
+        $book->description = $validated['category_desc'];
+        $book->author = $validated['author'];
+        $book->file = $filename;
+
+        $book->save();
+
+
+        return redirect()->action(
+            [BookController::class, 'index']
+
+        );
     }
 
     /**
