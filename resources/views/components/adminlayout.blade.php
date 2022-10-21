@@ -6,11 +6,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+        <meta name="description" content="">
         <title> Admin Dashboard </title>
         <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
 
         <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
+
 
         @yield("cssStyles")
 
@@ -64,15 +65,15 @@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-library"></i><span>Sermons</span></a>
                         <ul class="ml-menu">
-                            <li><a href="">Add Sermon</a></li>
-                            <li><a href="">Sermon List</a></li>
+                            <li><a href="{{ route ('addsermon') }}">Add Sermon</a></li>
+                            <li><a href="{{ route ('sermon') }}">Sermon List</a></li>
 
                         </ul>
                     </li>
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-layers"></i><span>Books</span></a>
                         <ul class="ml-menu">
-                            <li><a href="">Add Book</a></li>
-                            <li><a href="">Book List</a></li>
+                            <li><a href="{{ route ('addbook') }}">Add Book</a></li>
+                            <li><a href="{{ route('book')}}">Book List</a></li>
 
                         </ul>
                     </li>
@@ -86,6 +87,7 @@
 
         @yield("contents")
 
+
         <!-- Jquery Core Js -->
         <script src="{{asset('assets/bundles/libscripts.bundle.js')}}"></script>
         <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
@@ -95,6 +97,8 @@
 
 
         <script src="{{asset('assets/bundles/mainscripts.bundle.js')}}"></script>
+
+
 
         @yield("scripts")
 

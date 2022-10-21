@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sermon;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SermonController extends Controller
 {
@@ -14,7 +16,10 @@ class SermonController extends Controller
      */
     public function index()
     {
-        //
+        $sermons = Sermon::all();
+
+
+        return view('admin.sermons', compact('sermons'));
     }
 
     /**
@@ -24,7 +29,10 @@ class SermonController extends Controller
      */
     public function create()
     {
-        //
+
+        $categories = Category::all();
+
+        return view('admin.addsermon', Compact('categories'));
     }
 
     /**
@@ -35,7 +43,53 @@ class SermonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|unique:sermons|max:255',
+            'category_id' => 'required',
+            'category_desc' => 'required',
+            'preacher' => 'required',
+
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect('sermon/add')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        // Retrieve the validated input...
+        $validated = $validator->validated();
+
+
+        $sermon = new Sermon();
+        $sermon->title =  $validated['title'];
+        $sermon->category_id = $validated['category_id'];
+        $sermon->description = $validated['category_desc'];
+        $sermon->preacher = $validated['preacher'];
+
+        if($request->file('sermon_file')){
+            $file= $request->file('sermon_file');
+
+            $filename= date('YmdHi')."_".$sermon->title.".".$request->sermon_file->extension();
+
+            $file-> move(public_path('Image'), $filename);
+
+            $data['image']= $filename;
+        }
+
+        $sermon->file = $filename;
+
+        // dd($sermon);
+
+        $sermon -> save();
+
+        return redirect()->action(
+            [SermonController::class, 'index']
+
+        );
     }
 
     /**
@@ -78,8 +132,17 @@ class SermonController extends Controller
      * @param  \App\Models\Sermon  $sermon
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sermon $sermon)
+    public function destroy(Sermon $sermon, $id)
     {
-        //
+
+        $sermon = Sermon::find($id);
+
+        $sermon->delete();
+
+
+        return redirect()->action(
+            [SermonController::class, 'index']
+        );
+
     }
 }

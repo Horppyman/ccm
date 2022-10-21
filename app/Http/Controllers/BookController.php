@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class BookController extends Controller
 {
@@ -14,7 +16,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+
+
+        return view('admin.books', compact('books'));
     }
 
     /**
@@ -24,7 +29,10 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+
+        $categories = Category::all();
+
+        return view('admin.addbook', Compact('categories'));
     }
 
     /**
@@ -35,7 +43,53 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|unique:sermons|max:255',
+            'category_id' => 'required',
+            'book_desc' => 'required',
+            'author' => 'required',
+
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect('sermon/add')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        // Retrieve the validated input...
+        $validated = $validator->validated();
+
+
+        $book = new Book();
+        $book->title =  $validated['title'];
+        $book->category_id = $validated['category_id'];
+        $book->description = $validated['book_desc'];
+        $book->author = $validated['author'];
+
+        if($request->file('book_file')){
+            $file= $request->file('book_file');
+
+            $filename= date('YmdHi')."_".$book->title.".".$request->book_file->extension();
+
+            $file-> move(public_path('Image'), $filename);
+
+            $data['book_file']= $filename;
+        }
+
+        $book->file = $filename;
+
+        // dd($book);
+
+        $book -> save();
+
+        return redirect()->action(
+            [BookController::class, 'index']
+
+        );
     }
 
     /**
@@ -78,8 +132,15 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy(Book $book, $id)
     {
-        //
+        $book = Book::find($id);
+
+        $book->delete();
+
+
+        return redirect()->action(
+            [BookController::class, 'index']
+        );
     }
 }

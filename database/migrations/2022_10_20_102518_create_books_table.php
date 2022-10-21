@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('title');
             $table->text('description');
-            $table->string('preacher');
+            $table->string('author');
             $table->string('file');
             $table->timestamps();
 

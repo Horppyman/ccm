@@ -40,14 +40,6 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
 
-    // $category = new Category();
-    // $category->category_name = $request->category_name;
-    // $category->category_desc = $request->category_desc;
-
-    // dd($category);
-    //    $category -> save();
-
-
     $validator = Validator::make($request->all(), [
         'category_name' => 'required|unique:categories|max:255',
         'category_desc' => 'required',
@@ -120,8 +112,8 @@ class CategoryController extends Controller
     public function destroy(Category $category, $id)
     {
 
-        dd($id);
-        
+        // dd($id);
+
         $category = Category::find($id);
 
         $category->delete();

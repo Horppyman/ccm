@@ -62,8 +62,10 @@ Route::middleware(['isLoggedin'])->group (function() {
     Route::post('category/store', [CategoryController::class, 'store'])
     ->name('storecategory');
 
-    Route::post('category/delete/{$id}', [CategoryController::class, 'destroy'])
+    Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])
     ->name('deletecategory');
+
+
 
 
 //     Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])
@@ -78,14 +80,14 @@ Route::middleware(['isLoggedin'])->group (function() {
 //     | Book Routes
 //     ----------------------------------------------------------------
 //     */
-//     Route::get('/book', [BookController::class, 'index'])
-//     ->name('book');
+    Route::get('/book', [BookController::class, 'index'])
+    ->name('book');
 
-//     Route::get('/book/add', [BookController::class, 'create'])
-//     ->name('addbook');
+    Route::get('/book/add', [BookController::class, 'create'])
+    ->name('addbook');
 
-//     Route::post('/book/store', [BookController::class, 'store'])
-//     ->name('storebook');
+    Route::post('/book/store', [BookController::class, 'store'])
+    ->name('storebook');
 
 //     Route::get('/book/edit/{id}', [BookController::class, 'edit'])
 //     ->name('editbook');
@@ -93,26 +95,33 @@ Route::middleware(['isLoggedin'])->group (function() {
 //     Route::post('/book/store', [BookController::class, 'update'])
 //     ->name('updatebook');
 
+    Route::get('/book/delete/{id}', [BookController::class, 'destroy'])
+    ->name('deletebook');
+
+
 
 //     /*
 //     ----------------------------------------------------------------
 //     | Sermon Routes
 //     ----------------------------------------------------------------
 //     */
-//     Route::get('/sermon', [SermonController::class, 'index'])
-//     ->name('category');
+    Route::get('/sermon', [SermonController::class, 'index'])
+    ->name('sermon');
 
-//     Route::get('/sermon/add', [SermonController::class, 'create'])
-//     ->name('addsermon');
+    Route::get('/sermon/add', [SermonController::class, 'create'])
+    ->name('addsermon');
 
-//     Route::post('/sermon/store', [SermonController::class, 'store'])
-//     ->name('storesermon');
+    Route::post('/sermon/store', [SermonController::class, 'store'])
+    ->name('storesermon');
 
 //     Route::get('/sermon/edit/{id}', [SermonController::class, 'edit'])
 //     ->name('editsermon');
 
 //     Route::post('/sermon/store', [SermonController::class, 'update'])
 //     ->name('updatesermon');
+
+    Route::get('/sermon/delete/{id}', [SermonController::class, 'destroy'])
+    ->name('deletesermon');
 
 
 
