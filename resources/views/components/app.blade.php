@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- SEO Metas -->
-    <meta name="description" content="Zedekiah - MultiPurpose Church &amp; Religion HTML Template" />
-    <meta name="keywords" content="church, html, template, zedekiah, fundraising, charity" />
-    <meta name="author" content="ThemeSLR" />
+    <meta name="description" content="Christianity In Christ Ministry" />
+    <meta name="keywords" content="christianity, church, ccm" />
+    <meta name="author" content="Opeyemi Ayanyemi" />
 
     <!-- Page Title -->
-    <title>Zedekiah - MultiPurpose Church &amp; Religion HTML Template</title>
+    <title>Christianity In Christ Ministry</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('ccm/img/favicon.png')}}">
@@ -35,18 +35,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('ccm/css/color-schemes/skin-main.css') }}" id="css-default" />
     <!-- End: CSS Stylesheets -->
 
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7COpen+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,vietnamese,greek,latin-ext,greek-ext,cyrillic-ext,latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
 
 <!-- BODY -->
 <body class="home" id="body">
     <!-- PAGE LOADER -->
-    <div class="amaezi-page-loader">
+    {{-- <div class="amaezi-page-loader">
         <div id="loader-wrapper">
             <div id="loader"></div>
         </div>
-    </div>
+    </div> --}}
 
 
     <div class="row">
@@ -54,14 +52,15 @@
             <div class="row">
                 <div class="col-md-3">
                     <a class="navbar-brand" href="home-image.html">
-                        <img alt="logo" src="{{ asset('ccm/img/theme_logo_dark.png') }}">
+                        <img alt="logo" src="{{ asset('ccm/img/ccm-logo-dark-text.png') }}">
+                        {{-- <img alt="logo" src="{{ asset('ccm/img/theme_logo_dark.png') }}"> --}}
                     </a>
                 </div>
                 <div class="col-md-9 fundraising-contact-details">
                     <div class="header-nav-actions">
                         <!-- DONATIONS BUTTON -->
-                        <a class="donate-now" href="#">
-                            Contribute
+                        <a class="donate-now" href="{{route('page.contact')}}">
+                            Contact Us
                         </a>
                     </div>
                     <nav class="navbar navbar-default">
@@ -78,8 +77,11 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="theme-main-nav-menu">
                             <ul class="nav navbar-nav navbar-left">
-                                <li><a href="home-image.html">Home</a></li>
-                                <li class="dropdown">
+                                <li><a href="{{route('page.home')}}">Home</a></li>
+                                <li><a href="{{route('page.about')}}">About Us</a></li>
+                                <li><a href="{{route('page.sermons')}}">Sermons</a></li>
+                                <li><a href="{{route('page.books')}}">Books</a></li>
+                                {{-- <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="gallery-2-columns.html"><i class="icon-picture icons"></i> Gallery 2 Columns</a></li>
@@ -101,18 +103,18 @@
                                         <li><a href="about.html"><i class="icon-graduation icons"></i> About us</a></li>
                                         <li><a href="404.html"><i class="icon-close icons"></i> 404 Not Found</a></li>
                                     </ul>
-                                </li>
-                                <li class="dropdown">
+                                </li> --}}
+                                {{-- <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="blog-list.html"><i class="icon-list icons"></i> Blog List</a></li>
                                         <li><a href="blog-grid.html"><i class="icon-grid icons"></i> Blog Grid</a></li>
                                         <li><a href="blog-article.html"><i class="icon-book-open icons"></i> Article Page</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                </li> --}}
+                                {{-- <li><a href="contact.html">Contact</a></li>
                                 <li><a href="about.html">About</a></li>
-                                <li><a href="#">Purchase</a></li>
+                                <li><a href="#">Purchase</a></li> --}}
                             </ul>
                         </div>
                         <!-- /.navbar-collapse -->

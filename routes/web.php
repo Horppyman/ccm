@@ -20,8 +20,11 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
-Route::get('/', [PageController::class, 'index'])->name('home');
-Route::get('/sermons', [PageController::class, 'sermons'])->name('sermons');
+Route::get('/', [PageController::class, 'index'])->name('page.home');
+Route::get('/sermons', [PageController::class, 'sermons'])->name('page.sermons');
+Route::get('/books', [PageController::class, 'books'])->name('page.books');
+Route::get('/about', [PageController::class, 'about'])->name('page.about');
+Route::get('/contact-us', [PageController::class, 'contact'])->name('page.contact');
 
 Route::get('/register', [AuthController::class, 'registerpage']);
 

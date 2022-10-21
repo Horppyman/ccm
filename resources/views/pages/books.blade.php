@@ -13,7 +13,7 @@
 
     <!-- HEADER CONTENT -->
     <div class="amaezi_header_content">
-        <h1 class="amaezi_header_title">Our Sermons</h1>
+        <h1 class="amaezi_header_title">Our Books and Publications</h1>
     </div>
 </header>
 
