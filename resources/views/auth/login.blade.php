@@ -1,4 +1,4 @@
-@extends('components.layout')
+@extends('components.authLayout')
     @section('contents')
     <section class="flex grow items-center justify-center p-12">
         <div class="px-6 h-full text-gray-800">
@@ -6,15 +6,15 @@
             class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6"
             >
             <div
-                class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-12/12 lg:w-12/12 md:w-12/12 mb-12 md:mb-0"
+                class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0"
             >
-                <!-- <img
+                <img
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
                 class="w-full"
                 alt="Sample image"
-                /> -->
+                />
             </div>
-            <div class="xl:ml-20 xl:w-12/12 lg:w-12/12 md:w-12/12 mb-12 md:mb-0">
+            <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
                 <form action="{{route('login')}}" method="post">
                 @csrf
                 <div class="flex flex-row items-center justify-center lg:justify-start">

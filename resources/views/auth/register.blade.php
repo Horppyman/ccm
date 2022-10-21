@@ -1,4 +1,4 @@
-@extends('components.layout')
+@extends('components.authLayout')
     @section('contents')
     <section class="flex grow items-center justify-center p-12">
         <div class="px-6 h-full text-gray-800">
