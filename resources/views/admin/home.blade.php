@@ -25,7 +25,7 @@
                         <div class="card widget_2 big_icon zmdi-dns">
                             <div class="body">
                                 <h6>Categories</h6>
-                                <h2>20 <small class="info">of 1Tb</small></h2>
+                                <h2>{{$categories}}</h2>
 
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                         <div class="card widget_2 big_icon zmdi-library">
                             <div class="body">
                                 <h6>Sermons</h6>
-                                <h2>12% <small class="info">of 100</small></h2>
+                                <h2>{{$sermons}}</h2>
 
 
                             </div>
@@ -44,7 +44,7 @@
                         <div class="card widget_2 big_icon zmdi-layers">
                             <div class="body">
                                 <h6>Books</h6>
-                                <h2>39 <small class="info">of 100</small></h2>
+                                <h2>{{$books}} </h2>
 
                             </div>
                         </div>
