@@ -104,7 +104,7 @@
                     <ul class="">
                         @forelse ($categories as $category)
                         <li class="cat-item">
-                            <a href="#">{{$category->category_name}} (4)</a>
+                            <a href="#">{{$category->category_name}} ({{$category->Sermons->count()}})</a>
                         </li>
                         @empty
 

@@ -21,7 +21,7 @@ class PageController extends Controller
 
         // dd($categories[0]->Sermons->count());
 
-        dd($categories);
+        // dd($categories);
 
         $sermons = Sermon::all();
 
