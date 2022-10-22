@@ -24,7 +24,6 @@ class PageController extends Controller
     }
 
     public function books(){
-
         $categories = Category::with('Books')->get();
 
         $books = Book::all();
@@ -37,5 +36,9 @@ class PageController extends Controller
     }
     public function contact(){
         return view('pages.contact');
+    }
+
+    public function articles(){
+        return "argaeraga";
     }
 }
