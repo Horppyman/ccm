@@ -293,7 +293,7 @@ a.btn-primary.tslr-btn:hover,
 .slide-text  a:hover,
 .slide-text  a:active {
     color: #ffffff;
-    background: #FF613D;
+    background: #6db8ff;
     -webkit-transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }

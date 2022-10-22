@@ -1,14 +1,10 @@
 @extends('components.app')
 @section('contents')
     <!-- HEADER -->
-    <header class="amaezi-fullscreen-header section-bg" data-image-src="img/gallery/7.jpg">
+    <header class="amaezi-fullscreen-header section-bg" data-image-src="{{ asset('ccm/img/gallery/about-header.jpg') }}">
 
         <!-- HEADER OVERLAY -->
         <div class="amaezi-header-overlay"></div>
-
-        <!-- Header Video -->
-        <!-- <div class='youtube-video'></div>
-                                        <a class="youtube-player" data-property="{videoURL:'Tl8E1DzJ0bo',containment:'.youtube-video',autoPlay:true, mute:true, startAt:0, opacity:1,ratio:'16/9',showControls:false,showYTLogo:false}"></a> -->
 
         <!-- HEADER CONTENT -->
         <div class="amaezi_header_content">

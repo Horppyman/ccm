@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index(){
-        return view('pages.index');
+         $sermons = Sermon::all();
+        return view('pages.index', compact('sermons'));
     }
 
     public function sermons(){
@@ -23,7 +24,6 @@ class PageController extends Controller
     }
 
     public function books(){
-
         $categories = Category::with('Books')->get();
 
         $books = Book::all();
@@ -36,5 +36,9 @@ class PageController extends Controller
     }
     public function contact(){
         return view('pages.contact');
+    }
+
+    public function articles(){
+        return "argaeraga";
     }
 }

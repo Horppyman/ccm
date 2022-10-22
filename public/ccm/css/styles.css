@@ -499,7 +499,7 @@ footer {
 footer .footer-top {
     background-attachment: fixed;
     background-color: #021426;
-    background-image: url("../img/content/footer_bg-1.jpg");
+    background-image: url("../img/content/footer.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -680,7 +680,7 @@ body .pagination li a,
 
 /* ~~~~ 4. HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .top-header {
-    background-color: #FF613D;
+    background-color: #3de5ff;
 }
 .top-header .social-links li a i {
     font-size: 13px;

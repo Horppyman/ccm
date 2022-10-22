@@ -26,9 +26,10 @@ use App\Http\Controllers\SermonController;
 
 Route::get('/', [PageController::class, 'index'])->name('page.home');
 Route::get('/sermons', [PageController::class, 'sermons'])->name('page.sermons');
-Route::get('/books', [PageController::class, 'books'])->name('page.books');
+// Route::get('/books', [PageController::class, 'books']);
 Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/contact-us', [PageController::class, 'contact'])->name('page.contact');
+Route::get('/articles', [PageController::class, 'books'])->name('page.books');
 
 
 
