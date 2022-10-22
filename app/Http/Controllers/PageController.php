@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Category;
+use App\Models\Sermon;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -11,11 +14,24 @@ class PageController extends Controller
     }
 
     public function sermons(){
-        return view('pages.sermons');
+
+        // $categories = Category::where('id', '>', 0)->with('sermons')->get();
+
+        $categories = Category::with('Sermons')->get();
+
+        // dd($categories[0]->Sermons->count());
+
+        // dd($categories);
+
+        $sermons = Sermon::all();
+
+        return view('pages.sermons', compact('categories','sermons'));
     }
 
     public function books(){
-        return view('pages.books');
+        $books = Book::all();
+
+        return view('pages.books', compact('books'));
     }
 
     public function about(){

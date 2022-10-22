@@ -75,7 +75,7 @@ class SermonController extends Controller
 
             $filename= date('YmdHi')."_".$sermon->title.".".$request->sermon_file->extension();
 
-            $file-> move(public_path('Image'), $filename);
+            $file-> move(public_path('Audio'), $filename);
 
             $data['image']= $filename;
         } else {$filename = null;}
@@ -167,7 +167,7 @@ class SermonController extends Controller
 
             $filename= date('YmdHi')."_".$sermon->title.".".$request->sermon_file->extension();
 
-            $file-> move(public_path('Image'), $filename);
+            $file-> move(public_path('Audio'), $filename);
 
         } else {
             $filename = $sermon->file;
