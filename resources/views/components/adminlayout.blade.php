@@ -46,7 +46,7 @@
                         <div class="user-info">
 
                             <div class="detail mx-1">
-                                <h4>Hi, **name</h4>
+                                <h4>Hi, {{$user->name}}</h4>
                                 <a href="{{route('logout')}}" class="btn"> Logout </a>
                             </div>
                         </div>

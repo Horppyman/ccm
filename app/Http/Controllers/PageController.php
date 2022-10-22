@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Models\Sermon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -41,4 +42,40 @@ class PageController extends Controller
     public function articles(){
         return "argaeraga";
     }
+
+    public function mail(Request $request){
+
+        // ini_set( 'display_errors', 1 );
+        // error_reporting( E_ALL );
+
+        $contactName = $request->contactName;
+        $from = $request->contactEmail;
+        $contactPhone = $request->contactPhone;
+        $message = $request->message;
+
+
+
+
+        $to = "recipient@domain.tld";
+
+        $subject = $contactName.$contactPhone;
+
+
+
+        dd($message);
+
+        $headers = "From: $contactName" . $from;
+
+        if (mail($to,$subject,$message,$headers)) {
+
+            return redirect('/contact-us')->with('status', 'Message sent');
+        } else {
+
+            return redirect('/contact-us')->with('status', 'The email message was not sent.');
+
+        };
+
+    }
+
+
 }

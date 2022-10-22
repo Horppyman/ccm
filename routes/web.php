@@ -31,6 +31,8 @@ Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/contact-us', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/articles', [PageController::class, 'books'])->name('page.books');
 
+Route::post('/mail', [PageController::class, 'mail'])->name('mail');
+
 
 
 Route::get('/register', [AuthController::class, 'registerpage']);

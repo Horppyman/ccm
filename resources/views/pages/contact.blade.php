@@ -25,12 +25,12 @@
                 <div class="post-content animateIn" data-animate="fadeIn">
 
                     <!-- TITLE + SUBTITLE section -->
-                    <div class="relative section-header"> 
+                    <div class="relative section-header">
                         <h2 class="section-title">Join Us For Any of Our Services</h2>
                         <p>We are located at No. 4, Power Line Avenue, Off General Hospital Road, Fugar, Edo State.</p>
                     </div>
 
-                    <form method="POST" action="php/contact_form.php" class="row make-reservation submit-contact animateIn" data-animate="fadeIn">
+                    <form method="POST" action="{{route('mail')}}" class="row make-reservation submit-contact animateIn" data-animate="fadeIn">
                         <div class="col-md-6">
                             <div class="contact-section">
                                 <div id="google-map"></div>
@@ -53,16 +53,16 @@
                                     <input id="message" type="text" placeholder="Your Message" name="message" />
                                 </div>
                                 <div class="col-md-12">
-                                    <button type="submit" name="submit_contact" class="btn btn-danger fullwidth btn-lg unbordered right-side">Say Hello <i class="icon-cursor"></i></button>
+                                    <button type="submit" name="submit" class="btn btn-danger fullwidth btn-lg unbordered right-side">Say Hello <i class="icon-cursor"></i></button>
                                 </div>
                                 <p class="success-message">Thank you for contacting us! We will get back to you soon!</p>
-                            </div>  
+                            </div>
                         </div>
                     </form>
 
                     <br>
                     <br>
-                    <div class="relative section-header"> 
+                    <div class="relative section-header">
                         <h2 class="section-title">Or Call Us on:</h2>
                         <p><a href="tel:+2348056857790">+2348056857790</a>, or <a href="tel:+2347083061945">+2347083061945</a></p>
                     </div>

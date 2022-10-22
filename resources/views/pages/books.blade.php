@@ -53,8 +53,8 @@
                                                     <h3 class="post-title text-center">{{$book->title}}</h3>
 
 
-                                                        <a class="btn btn-primary view-pdf" href="https://www.gemini.com/documents/credit/Test_PDF.pdf">View PDF</a>
-                                                  
+                                                        <a class="btn btn-primary view-pdf" href="{{asset('Books/'.$book->file)}}">View PDF</a>
+
 
                                                     <div class="more-post-details text-center">
                                                         <a class="more-link" href="">
@@ -87,8 +87,8 @@
             </div>
 
             <div class="content-sidebar col-md-4">
-              
-  
+
+
                 <!-- Widget: Categories -->
                 <aside class="widget widget_categories animateIn" data-animate="fadeIn">
                     <h3 class="widget-title">Categories</h3>
