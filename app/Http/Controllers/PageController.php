@@ -15,13 +15,7 @@ class PageController extends Controller
 
     public function sermons(){
 
-        // $categories = Category::where('id', '>', 0)->with('sermons')->get();
-
         $categories = Category::with('Sermons')->get();
-
-        // dd($categories[0]->Sermons->count());
-
-        // dd($categories);
 
         $sermons = Sermon::all();
 
@@ -29,9 +23,12 @@ class PageController extends Controller
     }
 
     public function books(){
+
+        $categories = Category::with('Books')->get();
+
         $books = Book::all();
 
-        return view('pages.books', compact('books'));
+        return view('pages.books', compact('categories','books'));
     }
 
     public function about(){

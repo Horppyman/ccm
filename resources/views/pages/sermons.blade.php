@@ -84,8 +84,9 @@
                         </label>
                     </form>
                 </aside>
+
                 <!-- Widget: Tag Cloud -->
-                <aside class="widget widget_tag_cloud animateIn" data-animate="fadeIn">
+                <!-- <aside class="widget widget_tag_cloud animateIn" data-animate="fadeIn">
                     <h3 class="widget-title">Tag Cloud</h3>
                     <div class="tagcloud">
                         <a title="1 topic" href="#">church</a>
@@ -96,7 +97,7 @@
                         <a title="1 topic" href="#">sunday</a>
                         <a title="1 topic" href="#">bible</a>
                     </div>
-                </aside>
+                </aside> -->
 
 
                 <aside class="widget widget_categories animateIn" data-animate="fadeIn">
@@ -152,6 +153,8 @@
 
                     </div>
                 </aside>
+
+
                 <!-- Widget: Text widget -->
                 <aside class="widget widget_text animateIn" data-animate="fadeIn">
                     <h3 class="widget-title">Text Widget</h3>
