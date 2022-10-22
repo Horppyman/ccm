@@ -1,7 +1,7 @@
 /*
 * 
 * 
-* Main color:   [BLUE]:       #74B94B
+* Main color:   [BLUE]:       #a54bb9
 * Hover color:  [Dark-BLUE]:  #FF613D
 * 
 * 
@@ -49,10 +49,10 @@ blockquote.pull-right,
 .btn.bordered,
 blockquote, 
 .amaezisearch.open .amaezi-search-form{
-    border-color: #74B94B;
+    border-color: #a54bb9;
 }
 .cbp_tmtimeline > li:nth-child(2n+1) .cbp_tmlabel::after{
-    border-right-color: #74B94B;
+    border-right-color: #a54bb9;
 }
 .cbp_tmtimeline > li .cbp_tmlabel:after {
     border-right-color: #FF613D;
@@ -62,29 +62,29 @@ textarea:focus,
 .form-control:focus,
 .contact-form .row textarea:focus, 
 .contact-form .row input[type="text"]:focus{
-    border: 2px solid #74B94B;
+    border: 2px solid #a54bb9;
 }
 .grid li.shown:hover > a::before{
-    border: 8px solid #74B94B;
+    border: 8px solid #a54bb9;
 }
 .share-this-post .tooltip.top > .tooltip-arrow{
-    border-top-color: #74B94B;
+    border-top-color: #a54bb9;
 }
 .share-this-post .tooltip.bottom > .tooltip-arrow{
-    border-bottom-color: #74B94B;
+    border-bottom-color: #a54bb9;
 }
 .share-this-post .tooltip.right > .tooltip-arrow{
-    border-right-color: #74B94B;
+    border-right-color: #a54bb9;
 }
 .share-this-post .tooltip.left > .tooltip-arrow{
-    border-left-color: #74B94B;
+    border-left-color: #a54bb9;
 }
 .share-this-post .tooltip > .tooltip-inner {
-    background-color: #74B94B;
+    background-color: #a54bb9;
 }
 /*BOX-SHADOW*/
 .filters li::after {
-    box-shadow: 1px 0 #74B94B inset;
+    box-shadow: 1px 0 #a54bb9 inset;
 }
 /*COLOR*/
 .dropdown-menu > li > a::before,
@@ -137,7 +137,7 @@ h3 span,
 .section-title > span,
 nav .dropdown-menu i,
 .dropcap {
-    color: #74B94B;
+    color: #a54bb9;
 }
 /*COLOR - HOVER STATE*/
 .contact-social-networks > ul i, .contact-infos-area > ul i,
@@ -156,7 +156,7 @@ a:focus,
 
 /*BACKGROUND COLOR - NORMAL STATE*/
 .nicescroll-rails > div{
-    background-color: #74B94B !important;
+    background-color: #a54bb9 !important;
 }
 .header-nav-actions .donate-now,
 .highlighting-text.rose,
@@ -197,7 +197,7 @@ body .pagination .active > a,
 .amaezi_header_content .subscribe > input[type="submit"],
 .section-title.left-border::after,
 .post-pagination .pagination a{
-    background-color: #74B94B;
+    background-color: #a54bb9;
 }
 
 /*BACKGROUND COLOR - HOVER STATE*/
@@ -232,48 +232,48 @@ body .pagination .active > a:hover,
 .our-menu-shortcode .food-modal{
     box-shadow: 
         inset 0 0 0 16px #fff, 
-        inset 0 0 0 17px #74B94B, 
+        inset 0 0 0 17px #a54bb9, 
         inset 0 0 0 18px #fff, 
-        inset 0 0 0 19px #74B94B, 
+        inset 0 0 0 19px #a54bb9, 
         inset 0 0 0 20px #fff, 
-        inset 0 0 0 21px #74B94B,
+        inset 0 0 0 21px #a54bb9,
         0 4px 20px rgba(0,0,0,0.4);
     -webkit-box-shadow: 
         inset 0 0 0 16px #fff, 
-        inset 0 0 0 17px #74B94B, 
+        inset 0 0 0 17px #a54bb9, 
         inset 0 0 0 18px #fff, 
-        inset 0 0 0 19px #74B94B, 
+        inset 0 0 0 19px #a54bb9, 
         inset 0 0 0 20px #fff, 
-        inset 0 0 0 21px #74B94B,
+        inset 0 0 0 21px #a54bb9,
         0 4px 20px rgba(0,0,0,0.4);
 }
 #menu_category .menu-content,
 .menu-wrapper > div > div{
     box-shadow: 
         inset 0 0 0 16px #fff, 
-        inset 0 0 0 17px #74B94B, 
+        inset 0 0 0 17px #a54bb9, 
         inset 0 0 0 18px #fff, 
-        inset 0 0 0 19px #74B94B, 
+        inset 0 0 0 19px #a54bb9, 
         inset 0 0 0 20px #fff, 
-        inset 0 0 0 21px #74B94B;
+        inset 0 0 0 21px #a54bb9;
     -webkit-box-shadow: 
         inset 0 0 0 16px #fff, 
-        inset 0 0 0 17px #74B94B, 
+        inset 0 0 0 17px #a54bb9, 
         inset 0 0 0 18px #fff, 
-        inset 0 0 0 19px #74B94B, 
+        inset 0 0 0 19px #a54bb9, 
         inset 0 0 0 20px #fff, 
-        inset 0 0 0 21px #74B94B;
+        inset 0 0 0 21px #a54bb9;
 }
 .dark-section #menu_category .menu-content,
 .dark-section .menu-wrapper > div > div{
     box-shadow: 
         0 0 0 0px #2C2C2C inset, 
-        0 0 0 1px #74B94B inset, 
+        0 0 0 1px #a54bb9 inset, 
         0 0 0 3px #2C2C2C inset, 
-        0 0 0 4px #74B94B inset;
+        0 0 0 4px #a54bb9 inset;
     -webkit-box-shadow: 
         0 0 0 0px #2C2C2C inset, 
-        0 0 0 1px #74B94B inset, 
+        0 0 0 1px #a54bb9 inset, 
         0 0 0 3px #2C2C2C inset, 
-        0 0 0 4px #74B94B inset;
+        0 0 0 4px #a54bb9 inset;
 }
