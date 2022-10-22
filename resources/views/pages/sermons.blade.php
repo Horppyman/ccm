@@ -30,79 +30,31 @@
                     <div class="items-wrap blog_posts_list blog-posts-shortcode">
                         <div class="posts-list grid">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="single-post clearfix animateIn" data-animate="fadeIn">
-                                            <div class="col-md-12 post-thumbnail">
-                                                <figure class="effect-lexi">
-                                                    <img src="{{ asset('ccm/img/gallery/1.jpg') }}" alt=""/>
-                                                    <figcaption>
-                                                        <i class="icon-arrow-right-circle"></i>
-                                                    </figcaption>           
-                                                </figure>
-                                            </div>
-                                            <div class="col-md-12 post-details">
-                                                <div class="post-details-holder">
-                                                    <h3 class="post-title text-center"><a href="blog-article.html">New Education During National Day</a></h3>
-                                                    <div class="more-post-details text-center">
-                                                        <a class="more-link" href="blog-article.html"><i class="icon-user"></i> Jim Hauzi</a>
-                                                        <a class="more-link" href="blog-article.html"><i class="icon-clock"></i> 12/01/2017</a>
-                                                    </div>
-                                                    <p class="post-excerpt text-center">Nam auctor id nisi ut tempus. Aenean pulvinar ex sit amet dolor euismod.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
-
-                                <div class="spacer_30"></div>
+                                @forelse ( $sermons as $sermon )
 
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="single-post clearfix animateIn" data-animate="fadeIn">
-                                            <div class="col-md-12 post-thumbnail">
-                                                <figure class="effect-lexi">
-                                                    <img src="{{ asset('ccm/img/gallery/2.jpg') }}" alt=""/>
-                                                    <figcaption>
-                                                        <i class="icon-arrow-right-circle"></i>
-                                                    </figcaption>           
-                                                </figure>
-                                            </div>
                                             <div class="col-md-12 post-details">
                                                 <div class="post-details-holder">
-                                                    <h3 class="post-title text-center"><a href="blog-article.html">Stitching Together A New Life</a></h3>
-                                                    <div class="more-post-details text-center">
-                                                        <a class="more-link" href="blog-article.html"><i class="icon-user"></i> Jim Hauzi</a>
-                                                        <a class="more-link" href="blog-article.html"><i class="icon-clock"></i> 12/01/2017</a>
-                                                    </div>
-                                                    <p class="post-excerpt text-center">Nam auctor id nisi ut tempus. Aenean pulvinar ex sit amet dolor euismod.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
+                                                    <h3 class="post-title text-center">{{$sermon->title}}</h3>
 
-                                <div class="spacer_30"></div>
+                                                    <audio controls muted style=" width:100%;">
+                                                        <source src="{{asset('Audio/'.$sermon->file)}}" type="audio/ogg">
 
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="single-post clearfix animateIn" data-animate="fadeIn">
-                                            <div class="col-md-12 post-thumbnail">
-                                                <figure class="effect-lexi">
-                                                    <img src="{{ asset('ccm/img/gallery/3.jpg') }}" alt=""/>
-                                                    <figcaption>
-                                                        <i class="icon-arrow-right-circle"></i>
-                                                    </figcaption>           
-                                                </figure>
-                                            </div>
-                                            <div class="col-md-12 post-details">
-                                                <div class="post-details-holder">
-                                                    <h3 class="post-title text-center"><a href="blog-article.html">Stitching Together A New Life</a></h3>
+                                                    Your browser does not support the audio element.
+                                                    </audio>
                                                     <div class="more-post-details text-center">
-                                                        <a class="more-link" href="blog-article.html"><i class="icon-user"></i> Jim Hauzi</a>
-                                                        <a class="more-link" href="blog-article.html"><i class="icon-clock"></i> 12/01/2017</a>
+                                                        <a class="more-link" href="">
+                                                            <i class="icon-user"></i> {{$sermon->preacher}}
+                                                        </a>
+                                                        <a class="more-link" href="">
+                                                            <i class="icon-clock"></i>
+                                                            {{$sermon->created_at->toDateTimeString()}}
+                                                        </a>
                                                     </div>
-                                                    <p class="post-excerpt text-center">Nam auctor id nisi ut tempus. Aenean pulvinar ex sit amet dolor euismod.</p>
+                                                    <p class="post-excerpt text-center">{{$sermon->description}}</p>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -110,37 +62,16 @@
                                 </div>
 
                                 <div class="spacer_30"></div>
+                                @empty
 
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="single-post clearfix animateIn" data-animate="fadeIn">
-                                            <div class="col-md-12 post-thumbnail">
-                                                <figure class="effect-lexi">
-                                                    <img src="{{ asset('ccm/img/gallery/4.jpg') }}" alt=""/>
-                                                    <figcaption>
-                                                        <i class="icon-arrow-right-circle"></i>
-                                                    </figcaption>           
-                                                </figure>
-                                            </div>
-                                            <div class="col-md-12 post-details">
-                                                <div class="post-details-holder">
-                                                    <h3 class="post-title text-center"><a href="blog-article.html">Stitching Together A New Life</a></h3>
-                                                    <div class="more-post-details text-center">
-                                                        <a class="more-link" href="blog-article.html"><i class="icon-user"></i> Jim Hauzi</a>
-                                                        <a class="more-link" href="blog-article.html"><i class="icon-clock"></i> 12/01/2017</a>
-                                                    </div>
-                                                    <p class="post-excerpt text-center">Nam auctor id nisi ut tempus. Aenean pulvinar ex sit amet dolor euismod.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                                
+                                @endforelse
+
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
-                
+
             </div>
 
             <div class="content-sidebar col-md-4">
@@ -166,21 +97,20 @@
                         <a title="1 topic" href="#">bible</a>
                     </div>
                 </aside>
-                <!-- Widget: Text widget -->
-                <aside class="widget widget_text animateIn" data-animate="fadeIn">
-                    <h3 class="widget-title">Tweet Widget</h3>
-                    <div class="textwidget">
-                        <blockquote class="twitter-tweet" lang="en"><p>Some of the Envato Remix entries are simply amazing, you really need to check them out :) &#10;&#10;<a href="http://t.co/BS7eeMj4hB">http://t.co/BS7eeMj4hB</a></p>&mdash; Envato Market (@EnvatoMarket) <a href="https://twitter.com/EnvatoMarket/status/584035132350328832">April 3, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>            
-                    </div>
-                </aside>
-                <!-- Widget: Categories -->
+
+
                 <aside class="widget widget_categories animateIn" data-animate="fadeIn">
                     <h3 class="widget-title">Categories</h3>
                     <ul class="">
+                        @forelse ($categories as $category)
                         <li class="cat-item">
-                            <a href="#">Church (4)</a>
+                            <a href="#">{{$category->category_name}} (4)</a>
                         </li>
-                        <li class="cat-item">
+                        @empty
+
+                        @endforelse
+
+                        <!-- <li class="cat-item">
                             <a href="#">Charity (3)</a>
                         </li>
                         <li class="cat-item">
@@ -188,9 +118,10 @@
                         </li>
                         <li class="cat-item">
                             <a href="#">Events (7)</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </aside>
+
                 <!-- Widget: Social Media Widget -->
                 <aside class="widget widget_social_links animateIn" data-animate="fadeIn">
                     <h3 class="widget-title">Follow Me</h3>
@@ -198,12 +129,8 @@
                         <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Facebook">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Dribbble">
-                            <i class="fa fa-dribbble"></i>
-                        </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Stumbleupon">
-                            <i class="fa fa-stumbleupon"></i>
-                        </a>
+
+
                         <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="LinkedIn">
                             <i class="fa fa-linkedin"></i>
                         </a>
@@ -216,27 +143,13 @@
                         <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Twitter">
                             <i class="fa fa-twitter"></i>
                         </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="RSS">
-                            <i class="fa fa-rss"></i>
-                        </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Tumblr">
-                            <i class="fa fa-tumblr"></i>
-                        </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Lastfm">
-                            <i class="fa fa-lastfm"></i>
-                        </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Behance">
-                            <i class="fa fa-behance"></i>
-                        </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Delicious">
-                            <i class="fa fa-delicious"></i>
-                        </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Digg">
-                            <i class="fa fa-digg"></i>
-                        </a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Vine">
-                            <i class="fa fa-vine"></i>
-                        </a>
+
+
+
+
+
+
+
                     </div>
                 </aside>
                 <!-- Widget: Text widget -->
@@ -244,107 +157,15 @@
                     <h3 class="widget-title">Text Widget</h3>
                     <div class="textwidget">Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.</div>
                 </aside>
-                <!-- Widget: Recent posts with thumbnails -->
-                <aside class="widget widget_recent_entries_with_thumbnail animateIn" data-animate="fadeIn">
-                    <h3 class="widget-title">Recent Posts</h3>
-                    <ul>
-                        <li class="blog-post">
-                            <div class="col-md-3 post-thumbnail">
-                                <a href="#"><img class="img-rounded" alt="" src="{{ asset('ccm/img/gallery/1.jpg') }}"></a>
-                            </div>
-                            <div class="col-md-9 post-details"><a href="#">Become Volunteers!</a><span class="post-date">December 25, 2017</span></div>
-                        </li>
-                        <li class="blog-post">
-                            <div class="col-md-3 post-thumbnail">
-                                <a href="#"><img class="img-rounded" alt="" src="{{ asset('ccm/img/gallery/2.jpg') }}"></a>
-                            </div>
-                            <div class="col-md-9 post-details"><a href="#">Reading the Holy Book?</a><span class="post-date">December 25, 2017</span></div>
-                        </li>
-                        <li class="blog-post">
-                            <div class="col-md-3 post-thumbnail">
-                                <a href="#"><img class="img-rounded" alt="" src="{{ asset('ccm/img/gallery/3.jpg') }}"></a>
-                            </div>
-                            <div class="col-md-9 post-details"><a href="#">Sermons for souls</a><span class="post-date">December 25, 2017</span></div>
-                        </li>
-                        <li class="blog-post">
-                            <div class="col-md-3 post-thumbnail">
-                                <a href="#"><img class="img-rounded" alt="" src="{{ asset('ccm/img/gallery/4.jpg') }}"></a>
-                            </div>
-                            <div class="col-md-9 post-details"><a href="#">Your Life in your Hands</a><span class="post-date">December 25, 2017</span></div>
-                        </li>
-                    </ul>
-                </aside>
+
+
+
+
             </div>
         </div>
     </div>
 </div>
 
-
-<!-- SECTION: INSTAGRAM FEED -->
-<section>
-    <div id="tslr_instagram_feed" class="tslr_instagram_feed row">
-        <div class="item col-md-2 no_gap">
-            <div class="instagram_group">
-                <a target="_blank" href="#">
-                    <div class="instagram_overlay">
-                        <i class="icon-social-instagram icons"></i>
-                    </div>
-                    <img alt="" src="{{ asset('ccm/img/instagram-feed/insta_01.jpg') }}">
-                </a>
-            </div>
-        </div>
-        <div class="item col-md-2 no_gap">
-            <div class="instagram_group">
-                <a target="_blank" href="#">
-                    <div class="instagram_overlay">
-                        <i class="icon-social-instagram icons"></i>
-                    </div>
-                    <img alt="" src="{{ asset('ccm/img/instagram-feed/insta_02.jpg') }}">
-                </a>
-            </div>
-        </div>
-        <div class="item col-md-2 no_gap">
-            <div class="instagram_group">
-                <a target="_blank" href="#">
-                    <div class="instagram_overlay">
-                        <i class="icon-social-instagram icons"></i>
-                    </div>
-                    <img alt="" src="{{ asset('ccm/img/instagram-feed/insta_03.jpg') }}">
-                </a>
-            </div>
-        </div>
-        <div class="item col-md-2 no_gap">
-            <div class="instagram_group">
-                <a target="_blank" href="#">
-                    <div class="instagram_overlay">
-                        <i class="icon-social-instagram icons"></i>
-                    </div>
-                    <img alt="" src="{{ asset('ccm/img/instagram-feed/insta_04.jpg') }}">
-                </a>
-            </div>
-        </div>
-        <div class="item col-md-2 no_gap">
-            <div class="instagram_group">
-                <a target="_blank" href="#">
-                    <div class="instagram_overlay">
-                        <i class="icon-social-instagram icons"></i>
-                    </div>
-                    <img alt="" src="{{ asset('ccm/img/instagram-feed/insta_05.jpg') }}">
-                </a>
-            </div>
-        </div>
-        <div class="item col-md-2 no_gap">
-            <div class="instagram_group">
-                <a target="_blank" href="#">
-                    <div class="instagram_overlay">
-                        <i class="icon-social-instagram icons"></i>
-                    </div>
-                    <img alt="" src="{{ asset('ccm/img/instagram-feed/insta_06.jpg') }}">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 
 
     @endsection
