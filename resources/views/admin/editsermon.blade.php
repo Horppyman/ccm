@@ -82,7 +82,9 @@
                                     </div>
 
                                     <audio controls muted style=" width:100%;">
-                                        <source src="{{asset('Audio/'.$sermon[0]->file)}}" type="audio/ogg">
+                                        <source src="{{asset('Audio/'.$sermon[0]->file)}}"
+
+                                        type="audio/ogg">
 
                                     Your browser does not support the audio element.
                                     </audio>
