@@ -15,4 +15,9 @@ class Category extends Model
     {
         return $this->hasmany(Sermon::class, 'category_id', 'id');
     }
+
+    public function Books()
+    {
+        return $this->hasmany(Book::class, 'category_id', 'id');
+    }
 }

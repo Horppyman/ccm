@@ -46,7 +46,7 @@
                                         <input type="text" class="form-control"
                                         name="title" placeholder="Enter Sermon Name" value="{{$sermon[0]->title}}" />
                                     </div>
-                                    
+
 
                                     <div class="form-group mb-4">
                                         <label for="category_name">Sermon Category</label>
@@ -81,15 +81,13 @@
                                         value="{{$sermon[0]->preacher}}" />
                                     </div>
 
-                                    <div class="mb-3" style=" width:fit-content;   border-radius: 0.5rem; border: 1px solid black" >
-                                    <a href="/image/{{$sermon[0]->file}}" target="_blank">
-                                        <div>
-                                            <p>open</p>
-                                            <iframe src="/image/{{$sermon[0]->file}}" frameborder="0" style="  background-color: mediumspringgreen; border-radius: 0.5rem; overflow: hidden;">
-                                            </iframe>
-                                        </div>
-                                    </a>
-                                    </div>
+                                    <audio controls muted style=" width:100%;">
+                                        <source src="{{asset('Audio/'.$sermon[0]->file)}}"
+
+                                        type="audio/ogg">
+
+                                    Your browser does not support the audio element.
+                                    </audio>
 
                                     <div class="form-group mb-4">
                                         <label for="category_name">File</label>

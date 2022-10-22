@@ -75,7 +75,7 @@ class BookController extends Controller
 
             $filename= date('YmdHi')."_".$book->title.".".$request->book_file->extension();
 
-            $file-> move(public_path('Image'), $filename);
+            $file-> move(public_path('Books'), $filename);
 
             $data['book_file']= $filename;
         } else { $filename = null; };
@@ -153,7 +153,7 @@ class BookController extends Controller
 
 
         if ($request->book_file != ''){
-            $path = public_path().'/Image';
+            $path = public_path().'/Books';
 
             //code for remove old file
             if($book->file != ''  && $book->file != null){
@@ -165,7 +165,7 @@ class BookController extends Controller
 
             $filename= date('YmdHi')."_".$book->title.".".$request->book_file->extension();
 
-            $file-> move(public_path('Image'), $filename);
+            $file-> move(public_path('Books'), $filename);
 
         } else {
             $filename = $book->file;

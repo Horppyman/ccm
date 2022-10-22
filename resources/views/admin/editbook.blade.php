@@ -82,15 +82,13 @@
                                         value="{{$book[0]->author}}" />
                                     </div>
 
-                                    <div class="mb-3" style=" width:fit-content;   border-radius: 0.5rem; border: 1px solid black" >
-                                    <a href="/image/{{$book[0]->file}}" target="_blank">
-                                        <div>
-                                            <p>open</p>
-                                            <iframe src="/image/{{$book[0]->file}}" frameborder="0" style="  background-color: mediumspringgreen; border-radius: 0.5rem; overflow: hidden;">
-                                            </iframe>
-                                        </div>
-                                    </a>
+
+                                    <div class="row">
+
+                                        <a class="btn btn-primary view-pdf" href="{{asset('Books/'.$book[0]->file)}}">View PDF</a>
                                     </div>
+
+
 
                                     <div class="form-group mb-4">
                                         <label for="category_name">File</label>
