@@ -192,7 +192,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="row">
-                                    <div class="single-post clearfix animateIn" data-animate="fadeIn">
+                                    {{-- <div class="single-post clearfix animateIn" data-animate="fadeIn">
                                         <div class="col-md-12 post-thumbnail">
                                             <figure class="effect-lexi">
                                                 <img src="{{ asset('ccm/img/content/blogpost_01.jpg') }}"
@@ -216,67 +216,46 @@
                                                     pulvinar ex sit amet dolor euismod.</p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <div class="single-post clearfix animateIn" data-animate="fadeIn">
-                                        <div class="col-md-12 post-thumbnail">
-                                            <figure class="effect-lexi">
-                                                <img src="{{ asset('ccm/img/content/blogpost_02.jpg') }}"
-                                                    alt="" />
-                                                <figcaption>
-                                                    <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                        <div class="col-md-12 post-details">
-                                            <div class="post-details-holder">
-                                                <h3 class="post-title text-center"><a href="blog-article.html">Jesus =
-                                                        Faith in Humanity = Love</a></h3>
-                                                <div class="more-post-details text-center">
-                                                    <a class="more-link" href="blog-article.html"><i
-                                                            class="icon-user"></i> Pope Franciss</a>
-                                                    <a class="more-link" href="blog-article.html"><i
-                                                            class="icon-clock"></i> 12/01/2017</a>
+                                    </div> --}}
+                                    @forelse ($sermons as $sermon)
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="single-post clearfix animateIn" data-animate="fadeIn">
+                                                <div class="col-md-12 post-details">
+                                                    <div class="post-details-holder">
+                                                        <h3 class="post-title text-center">{{ $sermon->title }}</h3>
+
+                                                        <audio controls muted style=" width:100%;">
+                                                            <source src="{{ asset('Audio/' . $sermon->file) }}"
+                                                                type="audio/ogg">
+
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                        <div class="more-post-details text-center">
+                                                            <a class="more-link" href="">
+                                                                <i class="icon-user"></i> {{ $sermon->preacher }}
+                                                            </a>
+                                                            <a class="more-link" href="">
+                                                                <i class="icon-clock"></i>
+                                                                {{ $sermon->created_at->toDateTimeString() }}
+                                                            </a>
+                                                        </div>
+                                                        <p class="post-excerpt text-center">{{ $sermon->description }}
+                                                        </p>
+
+                                                    </div>
                                                 </div>
-                                                <p class="post-excerpt text-center">Nam auctor id nisi ut tempus. Aenean
-                                                    pulvinar ex sit amet dolor euismod.</p>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="spacer_30"></div>
+                                @empty
+                                @endforelse
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <div class="single-post clearfix animateIn" data-animate="fadeIn">
-                                        <div class="col-md-12 post-thumbnail">
-                                            <figure class="effect-lexi">
-                                                <img src="{{ asset('ccm/img/content/blogpost_03.jpg') }}"
-                                                    alt="" />
-                                                <figcaption>
-                                                    <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                        <div class="col-md-12 post-details">
-                                            <div class="post-details-holder">
-                                                <h3 class="post-title text-center"><a href="blog-article.html">Leviticus
-                                                        14:12: Take the one male lamb</a></h3>
-                                                <div class="more-post-details text-center">
-                                                    <a class="more-link" href="blog-article.html"><i
-                                                            class="icon-user"></i> Pope Franciss</a>
-                                                    <a class="more-link" href="blog-article.html"><i
-                                                            class="icon-clock"></i> 12/01/2017</a>
-                                                </div>
-                                                <p class="post-excerpt text-center">Nam auctor id nisi ut tempus. Aenean
-                                                    pulvinar ex sit amet dolor euismod.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
                         </div>
                     </div>
                 </div>

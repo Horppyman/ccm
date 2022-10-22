@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index(){
-        return view('pages.index');
+         $sermons = Sermon::all();
+        return view('pages.index', compact('sermons'));
     }
 
     public function sermons(){
